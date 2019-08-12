@@ -22,3 +22,24 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+# Write a program that accepts user input of the form
+input_month = input("Enter a month: ")
+input_year = input("Enter a year:")
+
+input_month = int(input_month)
+input_year = int(input_year)
+
+
+today = datetime.today()
+now_month = today.month
+now_year = today.year
+
+
+def month_year(input_month=now_month, input_year=now_year):
+    c = calendar.TextCalendar(calendar.SUNDAY)
+    display_calendar = c.formatmonth(input_year, input_month)
+    print(display_calendar)
+
+
+month_year(input_month, input_year)
